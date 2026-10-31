@@ -2,10 +2,6 @@
 
 A glove that recognizes trained signs from hand movement and speaks them aloud through a phone.
 
-[ADD: photo of the glove]
-
-**Demo video:** [ADD: link]
-
 ## How it works
 
 1. **Sensing:** five flex sensors measure finger bend, and the Arduino's built-in motion sensor measures acceleration and rotation.
@@ -20,28 +16,12 @@ The app's Space tab plots recorded signs and the live hand position in 3D. Eleve
 
 - Arduino Nano 33 BLE Sense Rev2
 - 5 flex sensors
-- [ADD: resistor value] resistor for each flex sensor
+- 10 ohm resistor for each flex sensor
 - Android phone
-
-| Reading | Arduino pin | Finger |
-|---|---|---|
-| Flex 1 | A0 | [ADD] |
-| Flex 2 | A1 | [ADD] |
-| Flex 3 | A2 | [ADD] |
-| Flex 4 | A3 | [ADD] |
-| Flex 5 | A4 | [ADD] |
-
-[ADD: wiring photo or diagram]
 
 ## What I did and how AI was used
 
-[CHECK AND REWRITE IN YOUR OWN WORDS. Keep only what is true.]
-
-I designed and built the glove, wired and debugged the hardware, and tested the system on my own hand. I chose the direction of the recognition system based on those tests, including making every sign a movement and replacing my original "default" class of random points with per-sign cutoffs.
-
-I used an AI coding assistant (Claude) to write much of the app code, including the DTW recognition code, the 3D plots, and most of the current training screen. I directed the changes, reported failures from testing on the glove, and decided what to keep or change.
-
-[ADD: which parts you wrote without AI, such as the first version of the app or the Arduino sketch.]
+I wrote much of the initial app code. That code is the code that I competed with at the competition and involved the static hand position tracking and KNN logic. Gemini was used to help debug the code, but all design decisions, hardware work, and testing were performed by me. Claude helped heavily in overhauling the project to use dynamic hand movements but all the previously mentioned items were also entirely done by me.
 
 ## Build journey
 
@@ -51,20 +31,15 @@ I used an AI coding assistant (Claude) to write much of the app code, including 
 - **Signs triggering early.** The pointing sign would fire partway through a pinch sign. Recognition now waits for the whole movement to finish.
 - **Loose board.** The motion sensor is on the Arduino, so a loosely mounted board corrupted the data. I secured it and re-recorded my signs.
 
-[ADD: photos, failed versions and test footage]
-
 ## Current status
 
 **Working:** recording custom signs, recognizing them on the glove, and speaking them aloud.
-
-**Measured accuracy on the real glove:** [ADD: for example, "HELLO: 17/20". Delete this line if you did not measure it.]
 
 **Known limitations:**
 
 - A pause in the middle of a sign can split it into two movements, which can make signs like MY and NAME trigger together.
 - It reads one hand only, while many ASL signs use two hands, and it doesn't capture facial expressions or where the hand is relative to the body.
 - It is trained to one person and only recognizes signs that person has recorded.
-- Flex 3 reads about 10 times lower than the other sensors, so the code multiplies it by 10. This is a software workaround for a hardware problem, and it also amplifies that sensor's noise.
 - Some cutoffs and settings are hand-tuned and may need adjusting for different signs.
 
 ## Running it
