@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+/* Default styles to ensure the app looks right immediately */
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #0f0c29;
+  color: white;
+}

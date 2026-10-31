@@ -1,0 +1,37 @@
+/* In a Tailwind project, App.css is used for custom CSS that 
+  isn't easily handled by utility classes.
+*/
+
+@layer components {
+  /* Glassmorphism card effect */
+  .hud-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 shadow-xl transition-all duration-300;
+  }
+
+  /* Custom neon text glow */
+  .text-glow {
+    text-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
+  }
+}
+
+/* Custom Scanline animation for the Cyberpunk HUD look */
+.scanline {
+  width: 100%;
+  height: 2px;
+  background: rgba(0, 210, 255, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  animation: scan 4s linear infinite;
+}
+
+@keyframes scan {
+  from { top: 0; }
+  to { top: 100%; }
+}
+
+/* Ensure the background doesn't scroll when the sidebar is open */
+.no-scroll {
+  overflow: hidden;
+}

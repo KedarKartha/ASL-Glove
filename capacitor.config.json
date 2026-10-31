@@ -1,0 +1,5 @@
+{
+  "appId": "com.yourname.glove",
+  "appName": "sign-glove-app",
+  "webDir": "dist"
+}
