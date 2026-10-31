@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bluetooth, ShieldCheck, Zap, Info } from 'lucide-react';
+import { Bluetooth, Zap, Info } from 'lucide-react';
 import { useGlove } from '../context/SignGloveContext';
 
 const Home = () => {
@@ -14,7 +14,7 @@ const Home = () => {
           SIGN<span className="text-blue-600">GLOVE</span>
         </h1>
         <p className="text-slate-500 font-medium max-w-xs mx-auto leading-relaxed">
-          The world's most advanced gesture translation interface.
+          Turns trained hand movements into spoken words.
         </p>
       </div>
 
@@ -59,26 +59,6 @@ const Home = () => {
           </div>
         )}
       </div>
-
-      {/* Feature Grid */}
-      {!device && (
-        <div className="grid grid-cols-2 gap-4 mt-12 w-full max-w-sm">
-          <div className="bg-white/50 p-6 rounded-3xl border border-slate-200 text-left">
-            <ShieldCheck className="text-blue-600 mb-3" size={28} />
-            <h3 className="font-black text-slate-800 text-sm">SECURE</h3>
-            <p className="text-[10px] text-slate-500 font-bold leading-tight mt-1">
-              Encrypted BLE Stack v5.0
-            </p>
-          </div>
-          <div className="bg-white/50 p-6 rounded-3xl border border-slate-200 text-left">
-            <Zap className="text-blue-600 mb-3" size={28} />
-            <h3 className="font-black text-slate-800 text-sm">ULTRA-FAST</h3>
-            <p className="text-[10px] text-slate-500 font-bold leading-tight mt-1">
-              10ms Inference Latency
-            </p>
-          </div>
-        </div>
-      )}
 
       {/* Bottom Info */}
       <div className="mt-auto pt-10 pb-6 flex items-center gap-2 text-slate-400">
